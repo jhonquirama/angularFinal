@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row-center">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <section *ngFor="let place of places">
+
+            <h3>Lugar: <p>{{place.name | titlecase}}</p></h3>
+            <h3>Descripcion: <p>{{place.description | titlecase}}</p> </h3>
+            <h3>Direccion:<p> {{place.location | titlecase}}</p></h3>
+
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row-center">
+      <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <section *ngFor="let users of users">
+  
+              <h3>Lugar: <p>{{users.nombre | titlecase}}</p></h3>
+              <h3>Descripcion: <p>{{users.correo | titlecase}}</p> </h3>
+              <h3>Direccion:<p> {{users.contrasena | titlecase}}</p></h3>
+  
+            </section>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row-center">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+
+        <!--  <input name="email" [(ngModel)] = "user.username" type="email" id="inputEmail" placeholder="Email address" required autofocus>
+          <input name="password" [(ngModel)] = "user.password" type="password" id="inputPassword"  placeholder="Password" required>
+
+
+          <input type="email" placeholder="Correo">
+          <input type="password" placeholder="Password" name="" id="">
+          <a href="dashboard">ingresar</a>
+          <button class="btn" (click)="validateLogin();" type="button">Sign in</button>
+          -->
+
+          <form  #usersForm="ngForm" (ngSubmit)="crearUsers
+          (usersForm)">
+            <h2>Please sign in</h2>
+               <input  type="email" placeholder="Email address" name="correo" #correo="ngModel"
+               [(ngModel)] ="usersService.selectedUSers.correo"  required autofocus>
+               <input type="password" placeholder="password" name="contrasena" #contrasena="ngModel" 
+               [(ngModel)] ="usersService.selectedUSers.contrasena" required>
+
+           <button class="btn" routerLink="/dashboard" (click)="validateLogin();" type="button">Sign in</button>
+       </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

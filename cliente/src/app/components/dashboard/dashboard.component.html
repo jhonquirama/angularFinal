@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #placeForm="ngForm" (ngSubmit)="crearLugar
+          (placeForm)">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]
+          ="placesService.selectedPlace._id">
+           <div class="row">
+             <div class="input-field col s12">
+                <input type="text" placeholder="lugar" name="name" #name="ngModel"
+                 [(ngModel)]="placesService.selectedPlace.name">
+
+             </div>
+             <div class="input-field col s12">
+                <input placeholder="descripción" name="description" #description="ngModel"
+                 [(ngModel)]="placesService.selectedPlace.description">
+
+             </div>
+             <div class="input-field col s12">
+                <input type="text" placeholder="dirección" name="location" #location="ngModel" 
+                [(ngModel)]="placesService.selectedPlace.location">
+
+             </div>
+         
+           <div class="card-action">
+            <div class="input-field col s12">
+                <button class="btn right" (click)="resetForm
+                (placeForm)">Clean</button>
+
+              <button class="btn right" style="margin-left: 2px;"
+              >Save</button>
+            </div>
+           </div>
+          </div>
+         </form>
+      </div>
+    </div>
+  </div>
+    <div class="col s7">
+        <table>
+            <thead>
+              <th>name</th>
+              <th>Descripcion</th>
+              <th>Direccion</th>
+              <th>Operaciones</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let place of placesService.places">
+                <td>{{place.name}}</td>
+                <td>{{place.description}}</td>
+                <td>{{place.location}}</td>
+                <td>
+                  <a (click)="editPlace(place)">
+                    <i class="material-icons">edit</i>
+                  </a>
+          
+                  <a (click)="eliminarLugar(place._id)">
+                    <i class="material-icons">delete</i>
+                  </a>
+          
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s5">
+       <div class="card">
+         <div class="card-content">
+     <button class="btn" routerLink="/home">Continuar</button>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+
